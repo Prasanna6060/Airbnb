@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -7,6 +8,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post('localhost:3000/api/login')
   };
 
   return (
