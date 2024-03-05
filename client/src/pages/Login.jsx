@@ -10,7 +10,7 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-4  ">
+    <div className="mt-4 grow ">
       <h1 className="text-4xl font-semibold text-center">Login</h1>
       <form
         onSubmit={handleSubmit}
