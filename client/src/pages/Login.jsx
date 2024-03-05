@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('localhost:3000/api/login')
+    axios.post("localhost:3000/api/login");
   };
 
   return (
@@ -18,8 +18,18 @@ const Login = () => {
         onSubmit={handleSubmit}
         className="flex flex-col  mx-auto  max-w-md p-4 "
       >
-        <input type="email" placeholder="youremail@gmail.com" />
-        <input type="password" placeholder="Enter your Password here" />
+        <input
+          type="email"
+          placeholder="youremail@gmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Enter your Password here"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button
           className="rounded-3xl bg-primary py-1 px-2 text-white 
         text-xl"
