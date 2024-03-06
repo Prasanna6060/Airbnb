@@ -8,7 +8,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("localhost:3000/api/login");
+    axios.post("http://localhost:3000/api/auth/login", {
+      email,
+      password
+    });
   };
 
   return (
