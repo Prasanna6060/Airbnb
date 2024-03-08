@@ -25,7 +25,7 @@ export const registerUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
     const {email, password } = req.body;
-    console.log(email, password);
+    // console.log(email, password);
     const findUser = await userModel.findOne({ email })
     const correctPassword = findUser === null ? false :
     await bcrypt.compare(password, findUser.password)

@@ -23,8 +23,8 @@ const Header = () => {
         <span className="font-bold text-3xl text-primary">airbnb</span>
       </div>
       <div
-        className="flex gap-3 rounded-full border border-gray-400 py-2 px-6 cursor-pointer
-      hover:shadow-md shadow-sm shadow-gray-200 "
+        className="flex  gap-3 rounded-full border border-gray-400 py-2 px-6 cursor-pointer
+      hover:shadow-md shadow-sm shadow-gray-200  "
       >
         <div>AnyWhere</div>
         <span className="border border-gray-300"></span>

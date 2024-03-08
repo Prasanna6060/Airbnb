@@ -1,18 +1,29 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/api/auth/login", {
-      email,
-      password
-    });
+    try {
+      await axios.post("http://localhost:3000/api/auth/login", {
+        email,
+        password
+      });
+      alert('Login successful');
+      setRedirect(true);
+    } catch (error) {
+      alert('Login failed');
+    }
   };
+
+  if (redirect) {
+    return <Navigate to={'/'} />;
+  }
 
   return (
     <div className="mt-4 grow ">
